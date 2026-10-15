@@ -1,0 +1,20 @@
+# Compilados
+target/
+out/
+bin/
+*.class
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Sistema
+Thumbs.db
+desktop.ini
+
+# Material solo para el profesor
+*_PROFE.pdf

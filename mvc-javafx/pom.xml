@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>es.dein</groupId>
+    <artifactId>mvc-javafx</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <!-- Ejemplos del patrón MVC con JavaFX.
+         JavaFX no viene incluido en el JDK desde Java 11: se descarga como dependencia. -->
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>21.0.12</javafx.version>
+        <!-- Ejemplo que arranca "mvn javafx:run". Se cambia con: mvn javafx:run -Dmain=mvc.login.Main -->
+        <main>mvc.contador.Main</main>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <!-- Solo lo usa el ejemplo contadorfxml -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>${main}</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
